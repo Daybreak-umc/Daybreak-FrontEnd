@@ -3,6 +3,8 @@
     <style name="Base.Theme.DayBreak" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/colorblack</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <!--    글꼴 Style 정의 (중복은 최초사용 title 사용)-->
