@@ -13,6 +13,7 @@ import java.time.LocalDate
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
+    var isGenerated = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 //        }
 
         // text 변환용
-        val isGenerated = false
+
 
         if(isGenerated){
             binding.layoutBeforeGenerate.visibility = View.GONE
