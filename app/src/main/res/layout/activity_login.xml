@@ -87,6 +87,7 @@
             android:background="@null"/>
 
         <ImageView
+            android:id="@+id/login_id_iv"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_clear_32"
@@ -117,22 +118,29 @@
             android:background="@null"/>
         
         <ImageView
+            android:id="@+id/login_pwd_close_eye_iv"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_eye_close_32"
             android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:focusable="true"
             android:visibility="gone"/>
 
         <ImageView
+            android:id="@+id/login_pwd_eye_iv"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_option_open_32"
             android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:focusable="true"
             android:visibility="gone"/>
 
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_login_btn"
         style="@style/wantedSans_semibold_14sp_inside_login"
         android:layout_width="320dp"
         android:layout_height="56dp"
