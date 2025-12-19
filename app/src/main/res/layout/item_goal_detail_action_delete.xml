@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorblack">
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tvDeleteGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="목표 삭제하기"
+        style="@style/wantedSans_semibold_12sp_miniquestion"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="end"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
