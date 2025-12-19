@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorbodygray800"
+    android:background="@color/Gray_800"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.Guideline
@@ -87,7 +87,7 @@
         app:tabMode="fixed"
         app:tabGravity="fill"
 
-        app:tabTextColor="@color/colorinsidegry500"
+        app:tabTextColor="@color/Gray_500"
         app:tabSelectedTextColor="@color/white"
 
         app:tabRippleColor="@android:color/transparent"
