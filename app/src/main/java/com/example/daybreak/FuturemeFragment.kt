@@ -27,8 +27,12 @@ class FuturemeFragment : Fragment() {
             binding.layoutFuturemePre.root.visibility = View.VISIBLE
             binding.layoutFuturemePost.root.visibility = View.GONE
 
-            // "미래의 나 생성하기" 버튼 클릭 시 이동 로직 예시
-            // binding.layoutFuturemePre.btnGenerate.setOnClickListener { ... }
+            // "미래의 나 생성하기" 버튼 클릭 시 이동 로직
+            binding.layoutFuturemePre.btnCreateFutureMc.setOnClickListener {
+                // 부모 액티비티인 MainActivity의 함수 호출
+                (activity as? MainActivity)?.moveToStep1()
+            }
+
         }
 
         return binding.root
