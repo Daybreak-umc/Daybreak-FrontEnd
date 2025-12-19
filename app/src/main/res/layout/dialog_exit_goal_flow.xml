@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 다이얼로그 카드 -->
+    <LinearLayout
+        android:id="@+id/dialog_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="18dp"
+        android:background="@drawable/dialog_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- 제목 -->
+        <TextView
+            android:id="@+id/dialog_title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="제목입력"
+            android:gravity="center"
+            style="@style/Text.Dialog.Title"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- 설명 -->
+        <TextView
+            android:id="@+id/dialog_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="본문입니다. 본문입니다. \n 본문입니다. 본문입니다."
+            android:gravity="center"
+            style="@style/Text.Dialog.Body"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- 버튼 영역 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginTop="20dp">
+
+            <!-- 계속 진행 -->
+            <include
+                android:id="@+id/dialog_button1"
+                layout="@layout/view_button"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"/>
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="0dp"/>
+
+            <!-- 포기 -->
+            <include
+                android:id="@+id/dialog_button2"
+                layout="@layout/view_button"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
