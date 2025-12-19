@@ -7,10 +7,10 @@
     <include
         android:id="@+id/layout_weeklygoals_pre"
         layout="@layout/layout_weeklygoals_pre"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
     <include
         android:id="@+id/layout_weeklygoals_post"
         layout="@layout/layout_weeklygoals_post"
-        android:visibility="visible"/>
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
