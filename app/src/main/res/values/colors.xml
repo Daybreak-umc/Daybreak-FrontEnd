@@ -7,11 +7,31 @@
     <color name="colorblack">#0C090A</color>
     <color name="colorbackground">#1F1819</color>
     <color name="colormainyellow">#FE9C00</color>
-    <color name="colorinsidegry500">#7E7B7B</color>
-    <color name="colorinsidegray300">#AAA7A3</color>
-    <color name="colorbodygray800">#362F2A</color>
-    <color name="colordialoggray700">#4E4742</color>
+
+    <!-- Primary -->
+    <color name="Primary_50">#FFF8E6</color>
+    <color name="Primary_100">#FFEDCC</color>
+    <color name="Primary_200">#FEDA99</color>
+    <color name="Primary_300">#FEC766</color>
+    <color name="Primary_400">#FEB333</color>
+    <color name="Primary_500">#FE9C00</color>
+    <color name="Primary_600">#CB7D00</color>
+
+    <!-- Gray -->
+    <color name="Gray_0">#F1EFEB</color>
+    <color name="Gray_100">#D9D7D4</color>
+    <color name="Gray_200">#C2BFBC</color>
+    <color name="Gray_300">#AAA7A3</color>
+    <color name="Gray_400">#928F8B</color>
+    <color name="Gray_500">#7E7B7B</color>
+    <color name="Gray_600">#665F5A</color>
+    <color name="Gray_700">#4E4742</color>
+    <color name="Gray_800">#362F2A</color>
+    <color name="Gray_900">#1F1819</color>
+    <color name="Gray_1000">#0C090A</color>
+
     <color name="colorhealth">#E57373</color>
     <color name="colorjob">#81C9A3</color>
     <color name="colorhobby">#64B5F6</color>
+
 </resources>

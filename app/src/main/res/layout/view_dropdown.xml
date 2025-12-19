@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:background="@drawable/dialog_background"
+    android:paddingStart="20dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:paddingEnd="12dp">
+
+    <!-- 선택된 텍스트 -->
+    <TextView
+        android:id="@+id/tvSelectedCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="건강"
+        android:textSize="16sp"
+        android:textColor="@color/Gray_1000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivArrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- 드롭다운 화살표 -->
+    <ImageView
+        android:id="@+id/ivArrow"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/icn_dropdown_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
