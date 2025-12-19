@@ -17,12 +17,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val oneYearLater = LocalDate.now().plusYears(1)
-        val year = oneYearLater.year
-        val month = oneYearLater.monthValue
-
-        binding.dateTv.text = "${year}년 ${month}월"
-
         // 어댑터 설정
         val adapter = MainVPAdapter(this)
         binding.homeViewpager.adapter = adapter
