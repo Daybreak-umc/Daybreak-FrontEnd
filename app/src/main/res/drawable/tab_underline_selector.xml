@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 선택된 탭: 회색 바닥선 + 흰색 밑줄 -->
+    <item android:state_selected="true">
+        <layer-list>
+
+            <!-- 전체 공통 회색 바닥선(1dp) -->
+            <item android:gravity="bottom">
+                <shape>
+                    <size android:height="1dp" />
+                    <solid android:color="#3A3A3A" />
+                </shape>
+            </item>
+
+            <!-- 선택 밑줄(2dp) -->
+            <item android:gravity="bottom">
+                <shape>
+                    <size android:height="2dp" />
+                    <solid android:color="#FFFFFF" />
+                </shape>
+            </item>
+
+        </layer-list>
+    </item>
+
+    <!-- 비선택 탭: 회색 바닥선만 -->
+    <item>
+        <layer-list>
+            <item android:gravity="bottom">
+                <shape>
+                    <size android:height="1dp" />
+                    <solid android:color="#3A3A3A" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+</selector>
