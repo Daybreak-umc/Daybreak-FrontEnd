@@ -6,8 +6,8 @@
     android:background="@color/black">
 
     <include
-        android:id="@+id/layout_futureme_pre"
-        layout="@layout/layout_futureme_pre"
+        android:id="@+id/layout_weeklygoals_pre"
+        layout="@layout/layout_weeklygoals_pre"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="visible"
@@ -17,8 +17,8 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <include
-        android:id="@+id/layout_futureme_post"
-        layout="@layout/layout_futureme_post"
+        android:id="@+id/layout_weeklygoals_post"
+        layout="@layout/layout_weeklygoals_post"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"

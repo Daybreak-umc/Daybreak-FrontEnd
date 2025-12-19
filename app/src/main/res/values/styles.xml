@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Dialog">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- 타이틀 텍스트 -->
+    <style name="Text.Title">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/Primary_500</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">@font/wantedsans_semibold</item>
+    </style>
+
+    <!-- 본문 텍스트 -->
+    <style name="Text.Body">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/Gray_400</item>
+        <item name="android:fontFamily">@font/wantedsans_semibold</item>
+    </style>
+
+    <style name="Text.Dialog.Title">
+        <item name="android:fontFamily">@font/wantedsans_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">@color/Gray_1000</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Text.Dialog.Body">
+        <item name="android:fontFamily">@font/wantedsans_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">@color/Gray_700</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Text.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/Gray_600</item>
+        <item name="android:fontFamily">@font/wantedsans_semibold</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+</resources>
