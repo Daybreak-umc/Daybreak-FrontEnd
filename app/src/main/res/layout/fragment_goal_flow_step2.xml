@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="com.example.daybreak.GoalFlowStep2Fragment">
+
+    <!-- 상단 네비게이션 바 -->
+    <include
+        android:id="@+id/goalFlowTitle"
+        layout="@layout/layout_navigation_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 화면 제목 -->
+    <TextView
+        android:id="@+id/futureTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Text.Title"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/goalFlowTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- 설명 문구 -->
+    <TextView
+        android:id="@+id/futureDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2026년 12월, 당신은 어떤 사람이 되어있을까요?"
+        android:textAppearance="@style/Text.Body"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/futureTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- 입력 박스 (멀티라인 완전 설정) -->
+    <EditText
+        android:id="@+id/etFutureMe"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/dialog_background"
+        android:gravity="top|start"
+        android:hint="미래의 내 모습을 입력하세요"
+        android:padding="16dp"
+        android:maxLength="80"
+        android:minLines="5"
+        android:maxLines="5"
+        android:inputType="textMultiLine"
+        android:imeOptions="actionDone"
+        android:textColor="@color/Gray_1000"
+        android:textColorHint="@color/Gray_500"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/futureDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 글자 수 카운트 -->
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/80"
+        android:textAppearance="@style/Text.Caption"
+        android:textColor="@color/Gray_600"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/etFutureMe"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 랜덤 목표 추천 -->
+    <include
+        android:id="@+id/btnRandomGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/view_button"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btnGoalCreate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 목표 생성하기 버튼 -->
+    <include
+        android:id="@+id/btnGoalCreate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/view_button"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

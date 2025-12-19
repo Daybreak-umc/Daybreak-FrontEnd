@@ -34,11 +34,17 @@
 
     <style name="Text.Dialog.Body">
         <item name="android:fontFamily">@font/wantedsans_regular</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:letterSpacing">-0.02</item>
         <item name="android:textColor">@color/Gray_700</item>
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="Text.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/Gray_600</item>
+        <item name="android:fontFamily">@font/wantedsans_semibold</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
 
 </resources>
