@@ -25,13 +25,13 @@
     <!--내지 글씨 (ID/PW입력/탙퇴하기/로그인)-->
     <style name="wantedSans_semibold_14sp_inside_del">
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
-        <item name="android:textColor">@color/colorinsidegry500</item>
+        <item name="android:textColor">@color/Gray_500</item>
         <item name="android:textSize">14sp</item>
     </style>
 
     <style name="wantedSans_regular_14sp_inside_id_pw">
         <item name="android:fontFamily">@font/wantedsans_regular</item>
-        <item name="android:textColor">@color/colorinsidegray300</item>
+        <item name="android:textColor">@color/Gray_300</item>
         <item name="android:textSize">14sp</item>
     </style>
 
@@ -50,7 +50,7 @@
 
     <style name="wantedSans_semibold_14sp_unselect">
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
-        <item name="android:textColor">@color/colorinsidegry500</item>
+        <item name="android:textColor">@color/Gray_500</item>
         <item name="android:textSize">14sp</item>
     </style>
 
@@ -94,7 +94,7 @@
     <!--목표상세-->
     <style name="wantedSans_semibold_14sp_bodygray">
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
-        <item name="android:textColor">@color/colorbodygray800</item>
+        <item name="android:textColor">@color/Gray_800</item>
         <item name="android:textSize">14sp</item>
     </style>
 
@@ -113,13 +113,13 @@
 
     <style name="wantedSans_regular_14sp_gray_dialog">
         <item name="android:fontFamily">@font/wantedsans_regular</item>
-        <item name="android:textColor">@color/colordialoggray700</item>
+        <item name="android:textColor">@color/Gray_700</item>
         <item name="android:textSize">14sp</item>
     </style>
 
     <style name="wantedSans_semibold_16sp_gray_dialog">
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
-        <item name="android:textColor">@color/colordialoggray700</item>
+        <item name="android:textColor">@color/Gray_700</item>
         <item name="android:textSize">16sp</item>
     </style>
 
@@ -139,7 +139,7 @@
 
     <style name="wantedSans_semibold_12sp_miniquestion">
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
-        <item name="android:textColor">@color/colorinsidegray300</item>
+        <item name="android:textColor">@color/Gray_300</item>
         <item name="android:textSize">12sp</item>
     </style>
 

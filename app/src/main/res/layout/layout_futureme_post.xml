@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black">
+
+    <!-- Left padding guideline -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <!-- Right padding guideline -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="195dp" />
+
+    <!-- Top padding guideline -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="30dp" />
+
+    <!-- Bottom padding guideline -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="330dp" />
+
+
+    <!--Title 미래의 내가-->
+    <LinearLayout
+        android:id="@+id/title_tv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toTopOf="@id/guideline_top"
+    app:layout_constraintStart_toStartOf="@id/guideline_start">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="미래의 내가"
+        style="@style/wantedSans_regular_18sp_gray_title"
+        android:textStyle="bold"/>
+</LinearLayout>
+<!--Title 어떤 사람이 되었는지 확인해 보세요-->
+    <LinearLayout
+        android:id="@+id/title_below_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/title_tv"
+        app:layout_constraintStart_toStartOf="@id/guideline_start">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="어떤 사람"
+            style="@style/wantedSans_semibold_18sp_yellow_title"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이 되었는지 확인해 보세요"
+            style="@style/wantedSans_regular_18sp_gray_title"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/futureme_goalitem_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/title_below_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_goalitem"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:overScrollMode="never"
+        tools:itemCount="4"
+        />
+
+    <ImageView
+        android:id="@+id/futureme_post_addbutton_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_newgoalbutton"
+        android:layout_marginEnd="20dp"
+
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,68 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black">
     
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp"
-        />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="30dp"
-        />
-
-    <LinearLayout
-        android:id="@+id/futureme_1_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal"
-        >
-        <TextView
-            android:id="@+id/futureme_default_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/wantedSans_regular_18sp_gray_title"
-            android:textStyle="bold"
-            android:text="아직 "/>
-        <TextView
-            android:id="@+id/futureme_color_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/wantedSans_semibold_18sp_yellow_title"
-            android:text="미래의 내가"/>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/futureme_2_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
-        app:layout_constraintTop_toBottomOf="@id/futureme_1_tv"
-        >
-        <TextView
-            android:id="@+id/futureme_default_rest_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            style="@style/wantedSans_regular_18sp_gray_title"
-            android:text="완성되지 않았어요 "/>
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/component_createfuturemebutton"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/futureme_2_tv"/>
-
+    <include
+        android:id="@+id/layout_futureme_pre"
+        layout="@layout/layout_futureme_pre"
+        android:visibility="visible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
