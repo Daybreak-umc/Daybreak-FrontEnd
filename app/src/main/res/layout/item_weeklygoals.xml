@@ -73,7 +73,7 @@
             android:id="@+id/check_icon_1"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/selector_goal_checkbox"
+            android:src="@drawable/selector_goal_checkbox"/>
 
         <TextView
             android:id="@+id/check_text_1"
@@ -84,6 +84,7 @@
             android:textSize="14sp"
             android:textColor="@color/white"/>
     </LinearLayout>
+
 
     <!-- ✅ 체크 2 -->
     <LinearLayout
@@ -104,7 +105,7 @@
             android:id="@+id/check_icon_2"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/selector_goal_checkbox"
+            android:src="@drawable/selector_goal_checkbox"/>
 
         <TextView
             android:id="@+id/check_text_2"
@@ -135,7 +136,7 @@
             android:id="@+id/check_icon_3"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/selector_goal_checkbox"
+            android:src="@drawable/selector_goal_checkbox"/>
 
         <TextView
             android:id="@+id/check_text_3"
