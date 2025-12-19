@@ -1,6 +1,7 @@
 package com.example.daybreak
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -35,5 +36,18 @@ class MainActivity : AppCompatActivity() {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 //            insets
 //        }
+
+        // text 변환용
+        val isGenerated = false
+
+        if(isGenerated){
+            binding.layoutBeforeGenerate.visibility = View.GONE
+            binding.layoutAfterGenerate.visibility = View.VISIBLE
+
+            binding.goalCountTv.text = "3개" // 예시 용 추후 변경
+        } else{
+            binding.layoutBeforeGenerate.visibility = View.VISIBLE
+            binding.layoutAfterGenerate.visibility = View.GONE
+        }
     }
 }
