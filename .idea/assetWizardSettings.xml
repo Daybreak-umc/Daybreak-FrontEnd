@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="component_createfuturemebutton" />
-                            <entry key="sourceFile" value="C:\Users\sodan\Downloads\component_CreateFutureMeButton.svg" />
+                            <entry key="outputName" value="ic_goalitem_bar" />
+                            <entry key="sourceFile" value="C:\Users\sodan\Downloads\GoalItembar.svg" />
                           </map>
                         </option>
                       </PersistentState>
