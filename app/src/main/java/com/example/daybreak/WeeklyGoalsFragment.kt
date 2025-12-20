@@ -26,7 +26,14 @@ class WeeklyGoalsFragment : Fragment() {
             binding.layoutWeeklygoalsPre.root.visibility = View.GONE
             binding.layoutWeeklygoalsPost.root.visibility = View.VISIBLE
 
+            val dummyData = arrayListOf(
+                WeeklyGoalData("ㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㄹ",false),
+                WeeklyGoalData("ㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㄹ",false),
+                WeeklyGoalData("ㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㄹ",false)
+            )
+
             // 여기서 체크박스 리스트 제어
+
             
         } else {
             binding.layoutWeeklygoalsPre.root.visibility = View.VISIBLE
