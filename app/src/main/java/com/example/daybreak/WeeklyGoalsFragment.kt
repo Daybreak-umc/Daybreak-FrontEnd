@@ -31,8 +31,7 @@ class WeeklyGoalsFragment : Fragment() {
         } else {
             binding.layoutWeeklygoalsPre.root.visibility = View.VISIBLE
             binding.layoutWeeklygoalsPost.root.visibility = View.GONE
-
-            // "목표 보러 가기" 버튼 등이 pre 레이아웃에 있다면 여기서 클릭 리스너 설정
+            
         }
         return binding.root
     }
