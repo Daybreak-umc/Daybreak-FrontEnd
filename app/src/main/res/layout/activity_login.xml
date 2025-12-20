@@ -82,7 +82,7 @@
             android:layout_width="252dp"
             android:layout_height="wrap_content"
             android:hint="아이디를 입력해주세요"
-            android:textColorHint="@color/colorinsidegray300"
+            android:textColorHint="@color/Gray_300"
             android:inputType="text"
             android:background="@null"/>
 
@@ -114,7 +114,7 @@
             android:layout_height="wrap_content"
             android:hint="비밀번호를 입력해주세요"
             android:inputType="textPassword"
-            android:textColorHint="@color/colorinsidegray300"
+            android:textColorHint="@color/Gray_300"
             android:background="@null"/>
         
         <ImageView

@@ -1,36 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- 타이틀 텍스트 -->
-    <style name="Text.Title">
+    <!-- ===================== -->
+    <!-- Base Text -->
+    <!-- ===================== -->
+    <style name="Text">
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <!-- ===================== -->
+    <!-- Dialog Base Text -->
+    <!-- ===================== -->
+    <style name="Text.Dialog" parent="Text">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- ===================== -->
+    <!-- Title -->
+    <!-- ===================== -->
+    <style name="Text.Title" parent="Text">
         <item name="android:textSize">22sp</item>
         <item name="android:textColor">@color/Primary_500</item>
-        <item name="android:letterSpacing">-0.02</item>
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
     </style>
 
-    <!-- 본문 텍스트 -->
-    <style name="Text.Body">
+    <!-- ===================== -->
+    <!-- Body -->
+    <!-- ===================== -->
+    <style name="Text.Body" parent="Text">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/Gray_400</item>
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
     </style>
 
-    <style name="Text.Dialog.Title">
+    <!-- ===================== -->
+    <!-- Dialog Title -->
+    <!-- ===================== -->
+    <style name="Text.Dialog.Title" parent="Text.Dialog">
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:letterSpacing">-0.02</item>
         <item name="android:textColor">@color/Gray_1000</item>
-        <item name="android:gravity">center</item>
     </style>
 
-    <style name="Text.Dialog.Body">
+    <!-- ===================== -->
+    <!-- Dialog Body -->
+    <!-- ===================== -->
+    <style name="Text.Dialog.Body" parent="Text.Dialog">
         <item name="android:fontFamily">@font/wantedsans_regular</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:letterSpacing">-0.02</item>
         <item name="android:textColor">@color/Gray_700</item>
-        <item name="android:gravity">center</item>
     </style>
-
 
 </resources>
