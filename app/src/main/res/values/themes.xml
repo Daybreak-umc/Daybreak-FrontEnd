@@ -1,9 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.DayBreak" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="android:statusBarColor">@color/colorblack</item>
+        <!-- ✅ 1. 전체 배경은 무조건 리얼 블랙! -->
+        <item name="android:windowBackground">@color/black</item> <!-- colorblack 혹은 #000000 -->
+        <item name="android:colorBackground">@color/black</item>
+
+        <!-- ✅ 2. 상태바/내비바 색상 설정 -->
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:navigationBarColor">@color/black</item>
+
+        <!-- 아이콘 색상 (검정 배경이니 아이콘은 밝게) -->
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
