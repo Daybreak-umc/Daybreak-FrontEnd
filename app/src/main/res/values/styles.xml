@@ -51,4 +51,11 @@
         <item name="android:textColor">@color/Gray_700</item>
     </style>
 
+    <style name="Text.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/Gray_600</item>
+        <item name="android:fontFamily">@font/wantedsans_semibold</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
 </resources>

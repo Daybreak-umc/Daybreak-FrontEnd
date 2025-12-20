@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="24dp"
+    android:background="@color/colorblack">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/wantedSans_regular_18sp_gray_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="앞으로의 " />
+
+        <TextView
+            style="@style/wantedSans_semibold_18sp_yellow_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="하루들" />
+
+        <TextView
+            style="@style/wantedSans_regular_18sp_gray_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이 모여" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            style="@style/wantedSans_regular_18sp_gray_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나의 " />
+
+        <TextView
+            style="@style/wantedSans_semibold_18sp_yellow_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2026년" />
+
+        <TextView
+            style="@style/wantedSans_regular_18sp_gray_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="을 만들어요" />
+    </LinearLayout>
+
+</LinearLayout>
