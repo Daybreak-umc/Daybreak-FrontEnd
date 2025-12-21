@@ -32,7 +32,8 @@ class MainActivity : AppCompatActivity() {
 
         // 1. 설정 아이콘 클릭 시
         binding.commonToolbar.layoutMainSetingIv.setOnClickListener {
-            openFragment(SettingFragment(), "설정")
+            //openFragment(SettingFragment(), "설정") // 임시로 프래그러먼트 전환 변경 실시
+            openFragment(GoalDetailFragment(), "목표 상세")
         }
 
         // 2. 뒤로가기 버튼 클릭 시
