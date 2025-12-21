@@ -20,7 +20,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.92" />
 
-    <!-- 👇 1. 스크롤을 담당할 NestedScrollView를 만듭니다. -->
+    <!--스크롤을 담당할 NestedScrollView -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
