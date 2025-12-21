@@ -26,6 +26,21 @@ RecyclerView.Adapter<WeeklyGoalRVAdapter.ViewHolder>(){
             if (item.checkList.size >= 1) binding.checkText1.text = item.checkList[0].text
             if (item.checkList.size >= 2) binding.checkText2.text = item.checkList[1].text
             if (item.checkList.size >= 3) binding.checkText3.text = item.checkList[2].text
+
+            // 체크박스 클릭 이벤트
+            val checkRows = listOf(binding.checkRow1, binding.checkRow2, binding.checkRow3)
+            val checkIcons = listOf(binding.checkIcon1, binding.checkIcon2, binding.checkIcon3)
+
+            item.checkList.forEachIndexed{index, checkItem->
+                if(index<checkRows.size){
+                    checkIcons[index].isSelected = checkItem.isChecked
+
+                    checkIcons[index].setOnClickListener {
+                        checkItem.isChecked=!checkItem.isChecked
+                        checkIcons[index].isSelected=checkItem.isChecked
+                    }
+                }
+            }
         }
 
     }
