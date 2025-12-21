@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.daybreak.Data.CheckItem
 import com.example.daybreak.Data.WeeklyGoalData
+import com.example.daybreak.GoalDetailFragment // ✅ [필수] 상세화면 import
+import com.example.daybreak.R                 // ✅ [필수] 리소스 import
 import com.example.daybreak.UI.adapter.WeeklyGoalRVAdapter
 import com.example.daybreak.UI.main.MainActivity
 import com.example.daybreak.databinding.FragmentWeeklyGoalsBinding
@@ -30,18 +32,17 @@ class WeeklyGoalsFragment : Fragment() {
             binding.layoutWeeklygoalsPre.root.visibility = View.GONE
             binding.layoutWeeklygoalsPost.root.visibility = View.VISIBLE
 
-
             //임시 코드(추후 수정 예정)
 
             // 더미 데이터 생성 (categoryId 1~6 활용)
             val dummyData = listOf(
                 WeeklyGoalData(
                     1, "건강", "내가 S면 넌 나의 N이 되어줘...",
-                    listOf(CheckItem("하루 30분 춤 연습"), CheckItem("물 2L 마시기"), CheckItem("영양제 먹기"))
+                    listOf(CheckItem(1L, "하루 30분 춤 연습"), CheckItem(2L, "물 2L 마시기"), CheckItem(3L,"영양제 먹기"))
                 ),
                 WeeklyGoalData(
                     2, "학업", "공부해서 남주자!",
-                    listOf(CheckItem("코틀린 복습"), CheckItem("알고리즘 1문제"), CheckItem("영어 단어 외우기"))
+                    listOf(CheckItem(4L, "코틀린 복습"), CheckItem(5L, "알고리즘 1문제"), CheckItem(6L, "영어 단어 외우기"))
                 )
             )
 
@@ -49,10 +50,6 @@ class WeeklyGoalsFragment : Fragment() {
             val adapter = WeeklyGoalRVAdapter(dummyData)
             binding.layoutWeeklygoalsPost.futuremeGoalitemRv.adapter = adapter
 
-
-
-
-            
         } else {
             binding.layoutWeeklygoalsPre.root.visibility = View.VISIBLE
             binding.layoutWeeklygoalsPost.root.visibility = View.GONE
@@ -62,9 +59,13 @@ class WeeklyGoalsFragment : Fragment() {
                 // 부모 액티비티인 MainActivity의 함수 호출
                 (activity as? MainActivity)?.moveToGoalThisWeek()
             }
-            
+
         }
         return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

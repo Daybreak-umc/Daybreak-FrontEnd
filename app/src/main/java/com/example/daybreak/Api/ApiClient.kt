@@ -15,4 +15,7 @@ object ApiClient {
         retrofit.create(AuthRetrofitInterface::class.java)
     }
     //val authService: AuthRetrofitInterface = retrofit.create(AuthRetrofitInterface::class.java)
+    val missionService: MissionRetrofitInterface by lazy {
+        retrofit.create(MissionRetrofitInterface::class.java)
+    }
 }
