@@ -81,19 +81,19 @@
 
     <style name="wantedSans_semibold_10sp_health">
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
-        <item name="android:textColor">@color/colorhealth</item>
+        <item name="android:textColor">@color/colorHealth</item>
         <item name="android:textSize">10sp</item>
     </style>
 
     <style name="wantedSans_semibold_10sp_job">
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
-        <item name="android:textColor">@color/colorjob</item>
+        <item name="android:textColor">@color/colorStudy</item>
         <item name="android:textSize">10sp</item>
     </style>
 
     <style name="wantedSans_semibold_10sp_hobby">
         <item name="android:fontFamily">@font/wantedsans_semibold</item>
-        <item name="android:textColor">@color/colorhobby</item>
+        <item name="android:textColor">@color/colorHobby</item>
         <item name="android:textSize">10sp</item>
     </style>
 
