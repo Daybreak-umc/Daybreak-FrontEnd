@@ -25,7 +25,15 @@ class SettingFragment : Fragment() {
                     putString("btntext","로그아웃")
                 }
             }
-
+            dialog.setCallback(object : PopUpDialogFragment.MyDialogCallback{
+                override fun onConfirm(){
+                    //로그인 화면으로 이동
+                    val intent = android.content.Intent(requireContext(), LoginActivity::class.java)
+                    intent.putExtra("showLogoutToast", true)
+                    intent.flags = android.content.Intent.FLAG_ACTIVITY_NEW_TASK or android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                }
+            })
 
             dialog.show(childFragmentManager,"Dialogtag")
         }

@@ -67,4 +67,8 @@ dependencies {
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
+
+    //뷰모델
+    implementation("androidx.fragment:fragment-ktx:1.5.5")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 }
