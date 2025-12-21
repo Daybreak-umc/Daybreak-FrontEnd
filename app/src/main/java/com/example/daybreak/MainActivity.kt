@@ -1,5 +1,6 @@
 package com.example.daybreak
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.addCallback
@@ -100,17 +101,21 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+//    fun moveToStep1() {
+//        binding.mainFrm.visibility = View.VISIBLE
+//        binding.homeTablayout.visibility = View.GONE
+//        binding.homeViewpager.visibility = View.GONE
+//        binding.layoutBeforeGenerate.visibility = View.GONE
+//        binding.layoutAfterGenerate.visibility = View.GONE
+//        binding.imgSymbolsDefault.visibility = View.GONE
+//
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.main_frm, GoalFlowActivity())
+//            .addToBackStack(null)
+//            .commit()
+//    }
     fun moveToStep1() {
-        binding.mainFrm.visibility = View.VISIBLE
-        binding.homeTablayout.visibility = View.GONE
-        binding.homeViewpager.visibility = View.GONE
-        binding.layoutBeforeGenerate.visibility = View.GONE
-        binding.layoutAfterGenerate.visibility = View.GONE
-        binding.imgSymbolsDefault.visibility = View.GONE
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.main_frm, GoalFlowStep1Fragment())
-            .addToBackStack(null)
-            .commit()
+        startActivity(Intent(this, GoalFlowActivity::class.java))
     }
+
 }
