@@ -1,10 +1,14 @@
-package com.example.daybreak
+package com.example.daybreak.UI.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.daybreak.Data.CheckItem
+import com.example.daybreak.Data.WeeklyGoalData
+import com.example.daybreak.UI.adapter.WeeklyGoalRVAdapter
+import com.example.daybreak.UI.main.MainActivity
 import com.example.daybreak.databinding.FragmentWeeklyGoalsBinding
 
 class WeeklyGoalsFragment : Fragment() {
@@ -31,10 +35,14 @@ class WeeklyGoalsFragment : Fragment() {
 
             // 더미 데이터 생성 (categoryId 1~6 활용)
             val dummyData = listOf(
-                WeeklyGoalData(1, "건강", "내가 S면 넌 나의 N이 되어줘...",
-                    listOf(CheckItem("하루 30분 춤 연습"), CheckItem("물 2L 마시기"), CheckItem("영양제 먹기"))),
-                WeeklyGoalData(2, "학업", "공부해서 남주자!",
-                    listOf(CheckItem("코틀린 복습"), CheckItem("알고리즘 1문제"), CheckItem("영어 단어 외우기")))
+                WeeklyGoalData(
+                    1, "건강", "내가 S면 넌 나의 N이 되어줘...",
+                    listOf(CheckItem("하루 30분 춤 연습"), CheckItem("물 2L 마시기"), CheckItem("영양제 먹기"))
+                ),
+                WeeklyGoalData(
+                    2, "학업", "공부해서 남주자!",
+                    listOf(CheckItem("코틀린 복습"), CheckItem("알고리즘 1문제"), CheckItem("영어 단어 외우기"))
+                )
             )
 
             // 어댑터 연결 (post 레이아웃 내부의 리사이클러뷰 ID 확인)

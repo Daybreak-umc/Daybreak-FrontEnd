@@ -1,5 +1,7 @@
-package com.example.daybreak
+package com.example.daybreak.UI.dialog
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -74,7 +76,7 @@ class PopUpDialogFragment : DialogFragment() {
     override fun onStart() {
         super.onStart()
         // 다이얼로그의 창의 배경을 투명하게 해주는것
-        dialog?.window?.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT))
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
 }

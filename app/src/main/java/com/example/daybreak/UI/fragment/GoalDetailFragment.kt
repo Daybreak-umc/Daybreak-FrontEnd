@@ -1,4 +1,4 @@
-package com.example.daybreak
+package com.example.daybreak.UI.fragment
 
 import android.app.Dialog
 import android.graphics.Color
@@ -7,16 +7,17 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.view.Window
+import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.daybreak.adapter.GoalDetailAdapter
 import com.example.daybreak.GoalDetailItem
 import com.example.daybreak.PeriodType
 import com.example.daybreak.R
+import com.example.daybreak.UI.adapter.GoalDetailAdapter
 
 class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
 
@@ -161,7 +162,7 @@ class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
         textView.text = message
 
         // 이미지 변경 로직 추가
-        val imageView = layout.findViewById<android.widget.ImageView>(R.id.dialog_toast_iv)
+        val imageView = layout.findViewById<ImageView>(R.id.dialog_toast_iv)
 
         if (isSuccess) {
             // 성공 아이콘
@@ -187,7 +188,7 @@ class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
 
         // LayoutParams가 없는 경우 생성해줌
         if (rootLayout.layoutParams == null) {
-            rootLayout.layoutParams = android.view.ViewGroup.LayoutParams(width, android.view.ViewGroup.LayoutParams.WRAP_CONTENT)
+            rootLayout.layoutParams = ViewGroup.LayoutParams(width, ViewGroup.LayoutParams.WRAP_CONTENT)
         } else {
             rootLayout.layoutParams.width = width
         }

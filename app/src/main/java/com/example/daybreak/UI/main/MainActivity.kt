@@ -1,14 +1,15 @@
-package com.example.daybreak
+package com.example.daybreak.UI.main
 
 import android.os.Bundle
 import android.view.View
 import androidx.activity.addCallback
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.daybreak.UI.fragment.GoalFlowStep1Fragment
+import com.example.daybreak.UI.adapter.MainVPAdapter
+import com.example.daybreak.R
+import com.example.daybreak.UI.fragment.SettingFragment
+import com.example.daybreak.UI.dialog.ToastDialogFragment
 import com.example.daybreak.databinding.ActivityMainBinding
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
@@ -29,8 +30,9 @@ class MainActivity : AppCompatActivity() {
         val adapter = MainVPAdapter(this)
         binding.homeViewpager.adapter = adapter
         val tabTitles = arrayOf("미래의 내 모습", "이번 주 행동 목표")
-        TabLayoutMediator(binding.homeTablayout, binding.homeViewpager){tab, position->
-            tab.text = tabTitles[position]}.attach()
+        TabLayoutMediator(binding.homeTablayout, binding.homeViewpager) { tab, position ->
+            tab.text = tabTitles[position]
+        }.attach()
 
         //헤더 변환 로직
         if(isGenerated){

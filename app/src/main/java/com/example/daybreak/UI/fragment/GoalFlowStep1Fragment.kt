@@ -1,4 +1,4 @@
-package com.example.daybreak
+package com.example.daybreak.UI.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

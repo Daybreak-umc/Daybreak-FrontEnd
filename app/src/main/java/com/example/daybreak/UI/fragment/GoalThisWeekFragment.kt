@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.daybreak.R
+import com.example.daybreak.UI.adapter.GoalThisWeekAdapter
 
 class GoalThisWeekFragment : Fragment(R.layout.fragment_goal_this_week) {
 
