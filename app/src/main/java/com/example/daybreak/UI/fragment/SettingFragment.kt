@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.daybreak.R
 import com.example.daybreak.UI.dialog.PopUpDialogFragment
 import com.example.daybreak.UI.login.LoginActivity
 import com.example.daybreak.databinding.FragmentSettingBinding
@@ -30,6 +31,10 @@ class SettingFragment : Fragment() {
             }
             dialog.setCallback(object : PopUpDialogFragment.MyDialogCallback{
                 override fun onConfirm(){
+                    //저장된 토큰 삭제
+                    val sharedPreferences = requireContext().getSharedPreferences("AUTH_PREFS", android.content.Context.MODE_PRIVATE)
+                    sharedPreferences.edit().clear().apply() // 모든 데이터 삭제
+
                     //로그인 화면으로 이동
                     val intent = Intent(requireContext(), LoginActivity::class.java)
                     intent.putExtra("showLogoutToast", true)
@@ -49,6 +54,19 @@ class SettingFragment : Fragment() {
                     putString("btntext", "그래도 탈퇴")
                 }
             }
+            dialog.setCallback(object : PopUpDialogFragment.MyDialogCallback {
+                override fun onConfirm() {
+                    // 저장된 토큰 삭제
+                    val sharedPreferences = requireContext().getSharedPreferences("AUTH_PREFS", android.content.Context.MODE_PRIVATE)
+                    sharedPreferences.edit().clear().apply()
+
+                    // 로그인 화면으로 이동하면서 탈퇴 신호 전달
+                    val intent = Intent(requireContext(), LoginActivity::class.java)
+                    intent.putExtra("showWithdrawalToast", true)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                }
+            })
 
             dialog.show(childFragmentManager, "Dialogtag")
         }

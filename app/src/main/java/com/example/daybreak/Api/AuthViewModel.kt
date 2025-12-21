@@ -1,5 +1,6 @@
 package com.example.daybreak.Api
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -23,7 +24,12 @@ class AuthViewModel : ViewModel() {
 
     // 입력값 변경 감지
     fun onTextChanged() {
+        val emailVal = email.value ?: ""
+        val pwdVal = password.value ?: ""
+        val isEnabled = emailVal.isNotBlank() && pwdVal.isNotBlank()
+
         _isLoginEnabled.value = !email.value.isNullOrBlank() && !password.value.isNullOrBlank()
+        _isLoginEnabled.value = isEnabled
     }
 
     // 로그인 실행

@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.daybreak.Api.AuthViewModel
+import com.example.daybreak.Data.PreferenceManager
 import com.example.daybreak.R
 import com.example.daybreak.UI.dialog.ToastDialogFragment
 import com.example.daybreak.UI.main.MainActivity
@@ -23,6 +25,17 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val sharedPreferences = getSharedPreferences("AUTH_PREFS", MODE_PRIVATE)
+        val savedToken = sharedPreferences.getString("ACCESS_TOKEN", null)
+
+        if (savedToken != null) {
+            // 토큰이 있다면 로그인 화면을 거치지 않고 바로 메인으로 이동
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+            return
+        }
+
         viewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
 
         val showToast = intent.getBooleanExtra("showLogoutToast", false)
@@ -31,28 +44,41 @@ class LoginActivity : AppCompatActivity() {
             toast.show(supportFragmentManager, "LogoutToast")
         }
 
+        val showWithdrawalToast = intent.getBooleanExtra("showWithdrawalToast", false)
+        if (showWithdrawalToast) {
+            showCustomToast("계정이 삭제되었어요", R.drawable.ic_progress_done_32)
+        }
+
         setupObservers()
         setupFocusListeners()
         setupClickListeners()
         setopTextWatchers()
     }
 
-    private fun setupObservers(){
-        // 로그인 버튼 활성화 관찰
-        viewModel.isLoginEnabled.observe(this){ isEnabled->
+    private fun setupObservers() {
+        val prefManager = PreferenceManager(this) // 매니저 초기화
+        val sharedPreferences = getSharedPreferences("AUTH_PREFS", MODE_PRIVATE)
+
+
+        viewModel.isLoginEnabled.observe(this) { isEnabled ->
             binding.loginLoginBtn.isEnabled = isEnabled
         }
-        // 로그인 결과 관찰
-        viewModel.loginResult.observe(this){ response ->
-            if (response != null && (response.isSuccess || response.code == "COMMON_200")){
 
+        viewModel.loginResult.observe(this) { response ->
+            if (response != null && (response.isSuccess || response.code == "COMMON_200")) {
+                // 1. 서버 응답에서 토큰 추출 및 저장
+                response.result?.accessToken?.let { token ->
+                    sharedPreferences.edit().putString("ACCESS_TOKEN", token).apply()
+                }
+
+                // 2. 메인 화면으로 이동
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("showLoginToast", true)
-
                 startActivity(intent)
                 finish()
-            } else{
-                showCustomToast("아이디 또는 비밀번호가 틀려요", R.drawable.ic_progress_warning_32)            }
+            } else {
+                showCustomToast("아이디 또는 비밀번호가 틀려요", R.drawable.ic_progress_warning_32)
+            }
         }
     }
     //비번 보이는 상태인지 저장하는 함수
