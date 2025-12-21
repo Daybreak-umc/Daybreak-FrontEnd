@@ -30,8 +30,14 @@
     <color name="Gray_900">#1F1819</color>
     <color name="Gray_1000">#0C090A</color>
 
-    <color name="colorhealth">#E57373</color>
-    <color name="colorjob">#81C9A3</color>
-    <color name="colorhobby">#64B5F6</color>
+    <color name="colorHealth">#E57373</color>
+    <color name="colorStudy">#81C9A3</color>
+    <color name="colorHobby">#64B5F6</color>
+    <color name="colorMind">#B39DDB</color>
+    <color name="colorCareer">#E5894B</color>
+    <color name="colorHabit">#4DB6AC</color>
+    <color name="colorRelationship">#F48FB1</color>
+    <color name="colorGrowth">#A0C256</color>
+    <color name="colorFinance">#FFD54F</color>
 
 </resources>
