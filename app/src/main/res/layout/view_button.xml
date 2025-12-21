@@ -2,13 +2,14 @@
 <Button
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/btnPrimary"
-    android:layout_width="match_parent"
-    android:layout_height="56dp"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_weight="1"
     android:background="@drawable/button_background"
     android:text="로그인"
     android:textSize="16sp"
     android:textStyle="bold"
     android:textColor="@color/Gray_0"
     android:paddingTop="15dp"
-    android:paddingBottom="15dp"
-    android:enabled="true"/>
+    android:paddingBottom="15dp"/>
+

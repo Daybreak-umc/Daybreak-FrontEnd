@@ -74,6 +74,7 @@ class LoginActivity : AppCompatActivity() {
                 // 2. 메인 화면으로 이동
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("showLoginToast", true)
+
                 startActivity(intent)
                 finish()
             } else {

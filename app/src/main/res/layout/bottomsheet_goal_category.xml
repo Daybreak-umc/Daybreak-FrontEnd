@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/Gray_0"
+    android:background="@drawable/dialog_background"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategory"
