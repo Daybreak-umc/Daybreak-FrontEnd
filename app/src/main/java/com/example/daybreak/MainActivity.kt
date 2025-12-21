@@ -1,5 +1,6 @@
 package com.example.daybreak
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.addCallback
@@ -76,7 +77,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+    
     // [기능 함수 모음]
 
 
@@ -168,6 +169,6 @@ class MainActivity : AppCompatActivity() {
      * ✅ 5. 외부 호출용 (GoalFlow 등에서 사용)
      */
     fun moveToStep1() {
-        openFragment(GoalFlowStep1Fragment(), "목표 생성")
+        startActivity(Intent(this, GoalFlowActivity::class.java))
     }
 }
