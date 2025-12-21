@@ -57,23 +57,19 @@
                 android:id="@+id/date_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colormainyellow"
-                android:textSize="31sp"
-                android:textStyle="bold"
+                style="@style/wantedSans_semibold_22sp_yellow_title"
                 android:text="2026년 12월" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="31sp"
+                style="@style/wantedSans_regular_22sp_gray_title"
                 android:text="의 나는" />
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="31sp"
+            style="@style/wantedSans_regular_22sp_gray_title"
             android:text="어떤 내가 되어 있을까요?" />
     </LinearLayout>
 
@@ -97,16 +93,13 @@
                 android:id="@+id/after_date_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colormainyellow"
-                android:textSize="31sp"
-                android:textStyle="bold"
+                style="@style/wantedSans_semibold_22sp_yellow_title"
                 android:text="2026년 12월" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="의 나는"
-                android:textColor="@color/white"
-                android:textSize="31sp" />
+                style="@style/wantedSans_regular_22sp_gray_title" />
 
         </LinearLayout>
 
@@ -119,15 +112,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1개"
-                android:textColor="@color/colormainyellow"
-                android:textSize="31sp"
-                android:textStyle="bold" />
+                style="@style/wantedSans_semibold_22sp_yellow_title" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="의 목표를 이룰 거예요"
-                android:textColor="@color/white"
-                android:textSize="31sp" />
+                style="@style/wantedSans_regular_22sp_gray_title" />
         </LinearLayout>
     </LinearLayout>
 

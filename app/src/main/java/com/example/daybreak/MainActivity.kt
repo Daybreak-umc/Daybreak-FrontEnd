@@ -18,6 +18,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //로그인 성공 토스트메시지
+        val showToast = intent.getBooleanExtra("showLoginToast", false)
+        if (showToast) {
+            val toast = ToastDialogFragment("로그인이 완료되었어요", R.drawable.ic_progress_done_32)
+            toast.show(supportFragmentManager, "LoginToast")
+        }
 
         //어댑터 및 탭 설정
         val adapter = MainVPAdapter(this)

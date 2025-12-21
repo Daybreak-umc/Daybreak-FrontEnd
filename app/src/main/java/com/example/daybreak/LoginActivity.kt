@@ -6,20 +6,50 @@ import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.daybreak.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
+    private lateinit var viewModel : AuthViewModel
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        viewModel = androidx.lifecycle.ViewModelProvider(this).get(AuthViewModel::class.java)
+
+        val showToast = intent.getBooleanExtra("showLogoutToast", false)
+        if (showToast) {
+            val toast = ToastDialogFragment("로그아웃 되었습니다", R.drawable.ic_progress_done_32)
+            toast.show(supportFragmentManager, "LogoutToast")
+        }
+
+        setupObservers()
         setupFocusListeners()
         setupClickListeners()
         setopTextWatchers()
+    }
+
+    private fun setupObservers(){
+        // 로그인 버튼 활성화 관찰
+        viewModel.isLoginEnabled.observe(this){ isEnabled->
+            binding.loginLoginBtn.isEnabled = isEnabled
+        }
+        // 로그인 결과 관찰
+        viewModel.loginResult.observe(this){ response ->
+            if (response != null && (response.isSuccess || response.code == "COMMON_200")){
+
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("showLoginToast", true)
+
+                startActivity(intent)
+                finish()
+            } else{
+                showCustomToast("아이디 또는 비밀번호가 틀려요", R.drawable.ic_progress_warning_32)            }
+        }
     }
     //비번 보이는 상태인지 저장하는 함수
     private var isPasswordVisible = false
@@ -65,9 +95,8 @@ class LoginActivity : AppCompatActivity() {
         binding.loginPwdCloseEyeIv.setOnClickListener(toggleAction)
 
         binding.loginLoginBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            showCustomToast("로그인을 처리 중이에요", R.drawable.ic_progress_progress_32)
+            viewModel.login()
         }
     }
     //  상태에 따라 아이콘 보이거나 없어지는거
@@ -85,17 +114,24 @@ class LoginActivity : AppCompatActivity() {
         val watcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int){}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // 아이디와 비밀번호가 모두 입력되었는지 확인
-                val idText = binding.loginIdEt.text.toString()
-                val pwdText = binding.loginPwdEt.text.toString()
 
-                // 둘 다 비어있지 않으면 버튼 활성화
-                val isEnabled = idText.isNotEmpty() && pwdText.isNotEmpty()
-                binding.loginLoginBtn.isEnabled = isEnabled // XML의 버튼 ID가 loginBtn이라 가정
+                viewModel.email.value = binding.loginIdEt.text.toString()
+                viewModel.password.value = binding.loginPwdEt.text.toString()
+                viewModel.onTextChanged() // 상태 체크
             }
             override fun afterTextChanged(s: Editable?) {}
         }
         binding.loginIdEt.addTextChangedListener(watcher)
         binding.loginPwdEt.addTextChangedListener(watcher)
+    }
+
+    private fun showCustomToast(message:String, iconId:Int){
+        val toast = ToastDialogFragment(message, iconId)
+        toast.show(supportFragmentManager,"CustomToast")
+    }
+
+    private fun startMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
