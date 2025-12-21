@@ -11,7 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.08" />
+    <!-- Right padding guideline -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92"
         />
 
     <!-- Top padding guideline -->
@@ -68,18 +75,18 @@
 
    <com.google.android.material.card.MaterialCardView
        android:id="@+id/btn_create_future_mc"
-       android:layout_width="320dp"
+       android:layout_width="0dp"
        android:layout_height="148dp"
        android:clickable="true"
        app:cardCornerRadius="12dp"
-       app:cardUseCompatPadding="true"
        app:cardBackgroundColor="@color/Gray_700"
        app:strokeWidth="0dp"
        app:strokeColor="@android:color/transparent"
        android:layout_marginTop="15dp"
        app:layout_constraintTop_toBottomOf="@id/subtitle_row"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent">
+       app:layout_constraintStart_toStartOf="@id/guideline_start"
+       app:layout_constraintEnd_toEndOf="@id/guideline_end"
+       >
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent"

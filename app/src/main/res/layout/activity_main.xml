@@ -1,44 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorblack"
-    android:fitsSystemWindows="true">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Gray_900"
 
-    <!-- 툴바 (높이 56dp 고정, 최상단 배치) -->
-    <include
-        android:id="@+id/commonToolbar"
-        layout="@layout/layout_common_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    android:layout_height="match_parent">
 
-    <View
-        android:id="@+id/gray_background_block"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/Gray_900"
-        app:layout_constraintTop_toBottomOf="@id/commonToolbar"
-        app:layout_constraintBottom_toTopOf="@id/home_tablayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-    <!-- 가이드라인들 -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.08" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="148dp" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horizontal_below"
         android:layout_width="wrap_content"
@@ -46,15 +25,22 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="272dp" />
 
-    <!-- 메인 화면 컨텐츠들 (심볼, 텍스트 등) -->
+
+    <include
+        android:id="@+id/commonToolbar"
+        layout="@layout/layout_common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/img_symbols_default"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/img_symbols_default"
         app:layout_constraintTop_toTopOf="@id/guideline_horizontal"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical" />
-
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        />
     <LinearLayout
         android:id="@+id/layout_before_generate"
         android:layout_width="wrap_content"
@@ -63,7 +49,7 @@
         android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/img_symbols_default"
         app:layout_constraintStart_toStartOf="@id/guideline_vertical">
-        <!-- 내용 생략 (기존과 동일) -->
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,22 +58,19 @@
                 android:id="@+id/date_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colormainyellow"
-                android:textSize="31sp"
-                android:textStyle="bold"
+                style="@style/wantedSans_semibold_22sp_yellow_title"
                 android:text="2026년 12월" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="31sp"
+                style="@style/wantedSans_regular_22sp_gray_title"
                 android:text="의 나는" />
         </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="31sp"
+            style="@style/wantedSans_regular_22sp_gray_title"
             android:text="어떤 내가 되어 있을까요?" />
     </LinearLayout>
 
@@ -99,26 +82,28 @@
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/img_symbols_default"
         app:layout_constraintStart_toStartOf="@id/guideline_vertical">
-        <!-- 내용 생략 (기존과 동일) -->
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/img_symbols_default"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical">
+
             <TextView
                 android:id="@+id/after_date_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colormainyellow"
-                android:textSize="31sp"
-                android:textStyle="bold"
+                style="@style/wantedSans_semibold_22sp_yellow_title"
                 android:text="2026년 12월" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="의 나는"
-                android:textColor="@color/white"
-                android:textSize="31sp" />
+                style="@style/wantedSans_regular_22sp_gray_title" />
+
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -128,19 +113,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1개"
-                android:textColor="@color/colormainyellow"
-                android:textSize="31sp"
-                android:textStyle="bold" />
+                style="@style/wantedSans_semibold_22sp_yellow_title" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="의 목표를 이룰 거예요"
-                android:textColor="@color/white"
-                android:textSize="31sp" />
+                style="@style/wantedSans_regular_22sp_gray_title" />
         </LinearLayout>
     </LinearLayout>
 
-    <!-- 탭 레이아웃 -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/home_tablayout"
         android:layout_width="0dp"
@@ -151,6 +132,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:tabMode="fixed"
         app:tabGravity="fill"
+
         app:tabTextColor="@color/Gray_500"
         app:tabSelectedTextColor="@color/white"
         app:tabRippleColor="@android:color/transparent"
@@ -158,7 +140,7 @@
         app:tabIndicatorHeight="0dp"
         app:tabIndicatorColor="@android:color/transparent" />
 
-    <!-- 뷰페이저 -->
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/home_viewpager"
         android:layout_width="0dp"
@@ -168,18 +150,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- 전체를 덮는 프래그먼트 컨테이너 (하나로 통일하는 게 관리하기 편함) -->
-    <!-- 툴바 아래(Bottom of commonToolbar)에 붙여야 툴바를 가리지 않음 -->
+    <FrameLayout
+        android:id="@+id/main_container_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp" />
+
     <FrameLayout
         android:id="@+id/main_frm"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
-        android:background="@color/Gray_900"
-        android:elevation="10dp"
-        app:layout_constraintTop_toBottomOf="@id/commonToolbar"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

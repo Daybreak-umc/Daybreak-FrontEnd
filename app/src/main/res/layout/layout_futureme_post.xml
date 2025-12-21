@@ -12,15 +12,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
-
+        app:layout_constraintGuide_percent="0.08" />
     <!-- Right padding guideline -->
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="195dp" />
+        app:layout_constraintGuide_percent="0.92"
+        />
 
     <!-- Top padding guideline -->
     <androidx.constraintlayout.widget.Guideline
@@ -81,9 +81,9 @@
         android:layout_height="wrap_content"
         android:nestedScrollingEnabled="false"
         app:layout_constraintTop_toBottomOf="@id/title_below_tv"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
         tools:listitem="@layout/item_goalitem"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:overScrollMode="never"
@@ -95,10 +95,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/img_newgoalbutton"
-        android:layout_marginEnd="20dp"
 
         app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
         android:visibility="visible"
         />
 
