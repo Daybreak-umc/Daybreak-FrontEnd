@@ -12,7 +12,17 @@
           <theme>@style/Theme.DayBreak</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_rounded_gray900_16dp.xml">
+        <config>
+          <theme>@style/Theme.DayBreak</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_rounded_primary100_16dp.xml">
+        <config>
+          <theme>@style/Theme.DayBreak</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_rounded_primary500_16dp.xml">
         <config>
           <theme>@style/Theme.DayBreak</theme>
         </config>
@@ -33,6 +43,16 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/dialog_toast_background.xml">
+        <config>
+          <theme>@style/Theme.DayBreak</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_chevron_left_dark_32.xml">
+        <config>
+          <theme>@style/Theme.DayBreak</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_chevron_left_light_32.xml">
         <config>
           <theme>@style/Theme.DayBreak</theme>
         </config>
@@ -77,6 +97,11 @@
           <theme>@style/Theme.DayBreak</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/img_symbols_first.xml">
+        <config>
+          <theme>@style/Theme.DayBreak</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/img_symbols_fourth.xml">
         <config>
           <theme>@style/Theme.DayBreak</theme>
@@ -93,6 +118,11 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/tab_underline_selector.xml">
+        <config>
+          <theme>@style/Theme.DayBreak</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_goal_flow_loading.xml">
         <config>
           <theme>@style/Theme.DayBreak</theme>
         </config>
@@ -227,6 +257,11 @@
           <theme>@style/Theme.DayBreak</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/view_dropdown.xml">
+        <config>
+          <theme>@style/Theme.DayBreak</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
@@ -234,18 +269,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00962ff1-92dd-46d9-9e53-1ad01a7bad57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-v28/activity_goal_flow_loading.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_goal_flow_loading.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/daybreak/CategoryMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/daybreak/CategoryMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/daybreak/WeeklyGoalRVAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/daybreak/WeeklyGoalRVAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_rounded_gray800_8dp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_rounded_gray800_8dp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_rounded_gray900_16dp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_rounded_gray900_16dp.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +282,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\sodan\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=R3CN80B83XW)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -281,11 +308,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="Kotlin Data Class" />
         <option value="resourceFile" />
         <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -313,6 +340,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="3733bpizghxxtI4rI6QbdPXsS9v" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -329,7 +359,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "feat/#73/checkbox__imagechange",
+    "git-widget-placeholder": "ui/#78/goal__flow__step3",
     "last_opened_file_path": "C:/Daybreak-FrontEnd/Daybreak-FrontEnd/app/src/main/res/layout",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
