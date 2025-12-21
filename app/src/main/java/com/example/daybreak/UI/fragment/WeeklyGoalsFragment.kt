@@ -56,6 +56,12 @@ class WeeklyGoalsFragment : Fragment() {
         } else {
             binding.layoutWeeklygoalsPre.root.visibility = View.VISIBLE
             binding.layoutWeeklygoalsPost.root.visibility = View.GONE
+
+            // "미래의 나 생성하기" 버튼 클릭 시 이동 로직
+            binding.layoutWeeklygoalsPre.weeklygoalsBtn.setOnClickListener {
+                // 부모 액티비티인 MainActivity의 함수 호출
+                (activity as? MainActivity)?.moveToGoalThisWeek()
+            }
             
         }
         return binding.root
