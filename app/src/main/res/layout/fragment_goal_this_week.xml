@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="97dp" />
+        app:layout_constraintGuide_begin="40dp" />
 
     <!-- 고정 헤더 영역 -->
     <LinearLayout
@@ -80,18 +80,22 @@
     </LinearLayout>
 
     <!-- ✅ 카드만 RecyclerView -->
+
+    <!-- 고정 버튼 영역 -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGoalThisWeek"
+        android:id="@+id/layout_goal_this_week_Rv"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
-        android:paddingTop="24dp"
+        android:paddingTop="20dp"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
         app:layout_constraintTop_toBottomOf="@id/goal_headerContainer"
         app:layout_constraintBottom_toTopOf="@id/actionContainer"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+        app:layout_constraintEnd_toEndOf="@id/guideline_end" />
+    />
 
-    <!-- 고정 버튼 영역 -->
     <LinearLayout
         android:id="@+id/actionContainer"
         android:layout_width="0dp"
@@ -103,6 +107,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
+            android:id="@+id/layout_goal_this_week_recommend_Tv"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="목표 다시 추천 받기"
@@ -111,6 +116,7 @@
             android:background="@drawable/bg_button_gray_1000"/>
 
         <TextView
+            android:id="@+id/layout_goal_this_week_run_Tv"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="56dp"
