@@ -61,7 +61,7 @@
 <!--title-->
     <TextView
         android:id="@+id/layout_frag_title_Tv"
-        android:layout_width="51dp"
+        android:layout_width="wrap_content"
         android:layout_height="21dp"
         style="@style/wantedSans_semibold_14sp_select"
         android:text="목표상세"

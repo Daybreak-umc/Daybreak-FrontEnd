@@ -3,9 +3,9 @@
     android:shape="rectangle">
 
     <!-- 배경색 -->
-    <solid android:color="@color/Gray_900" />
+    <solid android:color="@color/Gray_0" />
 
     <!-- 모서리 둥글기 -->
-    <corners android:radius="16dp" />
+    <corners android:radius="8dp" />
 
 </shape>
