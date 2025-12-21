@@ -102,7 +102,6 @@ class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
         // 배경 투명하게
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        // -------------------------------------------------------
         val tvTitle = dialog.findViewById<TextView>(R.id.dialog_goal_delete_title_Tv)      // 제목 TextView ID
         val tvContent = dialog.findViewById<TextView>(R.id.dialog_delete_sub_Tv)    // 내용 TextView ID
         val btnCancel = dialog.findViewById<TextView>(R.id.dialog_delete_cancel_Bt) // 취소 버튼 (TextView or Button)
@@ -192,5 +191,6 @@ class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
             rootLayout.layoutParams.width = width
         }
         toast.show()
+        
     }
 }
