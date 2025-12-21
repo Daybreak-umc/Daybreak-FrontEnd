@@ -59,8 +59,9 @@
                 android:id="@+id/dialog_button1"
                 layout="@layout/view_button"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/dialog_button_background_gray"/>
 
             <Space
                 android:layout_width="12dp"
@@ -71,8 +72,9 @@
                 android:id="@+id/dialog_button2"
                 layout="@layout/view_button"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/dialog_button_background"/>
         </LinearLayout>
 
     </LinearLayout>

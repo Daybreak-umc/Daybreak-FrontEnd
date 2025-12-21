@@ -9,6 +9,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.daybreak.Api.AuthViewModel
+import com.example.daybreak.GoalFlowActivity
 import com.example.daybreak.R
 import com.example.daybreak.UI.dialog.ToastDialogFragment
 import com.example.daybreak.UI.main.MainActivity
@@ -46,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
         viewModel.loginResult.observe(this){ response ->
             if (response != null && (response.isSuccess || response.code == "COMMON_200")){
 
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, GoalFlowActivity::class.java)
                 intent.putExtra("showLoginToast", true)
 
                 startActivity(intent)

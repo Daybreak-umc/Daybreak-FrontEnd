@@ -5,7 +5,11 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.daybreak.Api.ApiClient
+import com.example.daybreak.Api.RetrofitClient
 import com.example.daybreak.databinding.ActivityGoalFlowLoadingBinding
+import kotlinx.coroutines.launch
 
 class GoalFlowLoadingActivity : AppCompatActivity() {
 
@@ -47,11 +51,14 @@ class GoalFlowLoadingActivity : AppCompatActivity() {
         // 로딩 애니메이션 시작
         handler.postDelayed(symbolRunnable, 2000L)
 
-        // TODO: 로딩 완료 후 다음 화면 이동
-        // Handler().postDelayed({
-        //     startActivity(Intent(this, GoalResultActivity::class.java))
-        //     finish()
-        // }, 8000L)
+        lifecycleScope.launch {
+            val res = ApiClient.api.createWeeklyMissions()
+            if (res.isSuccessful) {
+                // TODO: 로딩 완료 후 다음 화면 이동
+            } else {
+                // 실패 처리
+            }
+        }
     }
 
     override fun onDestroy() {

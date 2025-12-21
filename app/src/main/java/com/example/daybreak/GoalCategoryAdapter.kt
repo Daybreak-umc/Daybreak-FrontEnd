@@ -1,33 +1,56 @@
 package com.example.daybreak
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.daybreak.databinding.ItemGoalCategoryBinding
 
 class GoalCategoryAdapter(
     private val items: List<String>,
     private val onClick: (String) -> Unit
-) : RecyclerView.Adapter<GoalCategoryAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<GoalCategoryAdapter.VH>() {
 
-    inner class ViewHolder(val binding: ItemGoalCategoryBinding)
-        : RecyclerView.ViewHolder(binding.root) {
+    private var selected: String? = null
 
-        fun bind(item: String) {
-            binding.tvCategory.text = item
-            binding.root.setOnClickListener { onClick(item) }
-        }
+    fun setSelected(value: String?) {
+        selected = value
+        notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemGoalCategoryBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
+    inner class VH(view: View) : RecyclerView.ViewHolder(view) {
+        val tv: TextView = view.findViewById(R.id.tvCategory)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
+        val v = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_goal_category, parent, false)
+        return VH(v)
+    }
+
+    override fun onBindViewHolder(holder: VH, position: Int) {
+        val item = items[position]
+        holder.tv.text = item
+
+        val isSelected = item == selected
+
+        holder.itemView.setBackgroundResource(
+            if (isSelected) R.drawable.bg_rounded_primary100_16dp else 0
         )
-        return ViewHolder(binding)
-    }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.tv.setTextColor(
+            ContextCompat.getColor(
+                holder.itemView.context,
+                if (isSelected) R.color.Primary_500 else R.color.Gray_700
+            )
+        )
+
+        holder.itemView.setOnClickListener {
+            selected = item
+            notifyDataSetChanged()
+            onClick(item)
+        }
     }
 
     override fun getItemCount() = items.size

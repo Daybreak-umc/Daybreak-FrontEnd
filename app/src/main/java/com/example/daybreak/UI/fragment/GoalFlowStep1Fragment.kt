@@ -1,5 +1,8 @@
 package com.example.daybreak.UI.fragment
 
+import android.content.res.ColorStateList
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
@@ -8,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,6 +44,7 @@ class GoalFlowStep1Fragment : Fragment() {
 
         initTitle()
         initButtons()
+        forcePrimaryButtonColor()
         initDropdown()
     }
 
@@ -75,7 +80,6 @@ class GoalFlowStep1Fragment : Fragment() {
         val nextButton = binding.btnGoalNext.btnPrimary
 
         nextButton.text = "다음으로"
-        nextButton.isEnabled = false
 
         nextButton.setOnClickListener {
             goNext()
@@ -86,37 +90,89 @@ class GoalFlowStep1Fragment : Fragment() {
     /** 🔹 카테고리 드롭다운 */
     private fun initDropdown() {
         binding.categoryDropdown.root.setOnClickListener {
-            showCategoryBottomSheet()
+            showCategoryDropdown(it)
         }
+
     }
 
     /** 🔹 카테고리 선택 BottomSheet */
-    private fun showCategoryBottomSheet() {
-        val dialog = BottomSheetDialog(requireContext())
-        val view = layoutInflater.inflate(R.layout.bottomsheet_goal_category, null)
+    private var selectedCategory: String? = null
+    private var categoryPopup: PopupWindow? = null
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.rvCategory)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val adapter = GoalCategoryAdapter(categories) { selected ->
-            binding.categoryDropdown.tvSelectedCategory.text = selected
-            binding.btnGoalNext.btnPrimary.isEnabled = true
-            dialog.dismiss()
+    private fun showCategoryDropdown(anchor: View) {
+        // 이미 열려 있으면 닫기 (토글)
+        if (categoryPopup?.isShowing == true) {
+            categoryPopup?.dismiss()
+            return
         }
 
-        recyclerView.adapter = adapter
-        dialog.setContentView(view)
-        dialog.show()
+        val popupView = layoutInflater.inflate(R.layout.bottomsheet_goal_category, null)
+        val rv = popupView.findViewById<RecyclerView>(R.id.rvCategory)
+
+        rv.layoutManager = LinearLayoutManager(requireContext())
+
+        val adapter = GoalCategoryAdapter(categories) { selected ->
+            // ✅ 선택 상태만 변경
+            selectedCategory = selected
+            binding.categoryDropdown.tvSelectedCategory.text = selected
+        }
+
+        // 기존 선택 유지
+        adapter.setSelected(selectedCategory)
+
+        rv.adapter = adapter
+
+        categoryPopup = PopupWindow(
+            popupView,
+            anchor.width,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            true
+        ).apply {
+            isOutsideTouchable = true
+            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            elevation = 8f
+
+            val gap = resources.getDimensionPixelSize(R.dimen.dropdown_gap)
+            showAsDropDown(anchor, 0, gap)
+
+
+            setOnDismissListener {
+                binding.categoryDropdown.ivArrow.animate()
+                    .rotation(0f).setDuration(150).start()
+            }
+        }
+
+        // 화살표 회전
+        binding.categoryDropdown.ivArrow.animate()
+            .rotation(180f).setDuration(150).start()
+    }
+
+    private fun forcePrimaryButtonColor() {
+        val btn = binding.btnGoalNext.btnPrimary
+
+        // 🔥 이게 핵심
+        btn.backgroundTintList =
+            ColorStateList.valueOf(requireContext().getColor(R.color.Primary_500))
+
+        btn.setTextColor(requireContext().getColor(R.color.Gray_0))
     }
 
 
     /** 🔹 Step2 이동 */
     private fun goNext() {
+        val f = GoalFlowStep2Fragment().apply {
+            arguments = Bundle().apply {
+                putString("category", selectedCategory ?: "마음") // 선택값
+            }
+        }
+
         parentFragmentManager.beginTransaction()
-            .replace(R.id.goalFlowContainer, GoalFlowStep2Fragment())
+            .replace(R.id.goalFlowContainer, f)
             .addToBackStack(null)
             .commit()
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

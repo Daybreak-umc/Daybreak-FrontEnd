@@ -1,6 +1,8 @@
 package com.example.daybreak
 
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -45,8 +47,49 @@ class GoalFlowActivity : AppCompatActivity() {
         if (supportFragmentManager.backStackEntryCount > 0) {
             supportFragmentManager.popBackStack()
         } else {
-            // Step1에서 뒤로 → 그냥 종료 or 다이얼로그
-            finish()
+            // Step1에서 뒤로가기 → 다이얼로그 표시
+            showExitDialog()
         }
     }
+
+    private fun showExitDialog() {
+        val dialog = android.app.Dialog(this)
+        dialog.setContentView(R.layout.dialog_exit_goal_flow)
+        dialog.setCancelable(false)
+
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+
+        // 제목 / 설명
+        val tvTitle1 = dialog.findViewById<TextView>(R.id.dialog_title1)
+        val tvTitle2 = dialog.findViewById<TextView>(R.id.dialog_title2)
+
+        tvTitle1.text = "목표 설정을 포기하시나요?"
+        tvTitle2.text = "조금만 더 하면\n새로운 미래의 내가 보여요!"
+
+        // 🔥 include된 버튼은 바로 Button
+        val btnContinue = dialog.findViewById<android.widget.Button>(R.id.dialog_button1)
+        val btnExit = dialog.findViewById<android.widget.Button>(R.id.dialog_button2)
+
+        btnContinue.text = "계속 진행"
+        btnExit.text = "포기"
+
+        btnContinue.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        btnExit.setOnClickListener {
+            dialog.dismiss()
+            finish()
+        }
+
+        dialog.show()
+
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+    }
+
+
 }
