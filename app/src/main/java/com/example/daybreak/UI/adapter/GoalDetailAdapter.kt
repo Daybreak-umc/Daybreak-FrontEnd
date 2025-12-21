@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.daybreak.GoalDetailItem
+import com.example.daybreak.Data.GoalDetailItem
 import com.example.daybreak.R
 
 class GoalDetailAdapter(
