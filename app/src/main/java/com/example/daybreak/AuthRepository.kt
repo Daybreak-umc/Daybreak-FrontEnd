@@ -1,4 +1,9 @@
 package com.example.daybreak
 
-class AuthRepository {
+import retrofit2.Response
+
+class AuthRepository(private val authService: AuthRetrofitInterface) {
+    suspend fun login(loginRequest: Login): retrofit2.Response<LoginResponse> {
+        return authService.login(loginRequest)
+    }
 }

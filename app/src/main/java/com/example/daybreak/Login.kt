@@ -8,13 +8,13 @@ data class Login(
 )
 // 서버에서 받을 응답 데이터 클래스 (Swagger의 Response Schema 기준)
 data class LoginResponse(
-    @SerializedName("isSuccess") val isSuccess: Boolean,
-    @SerializedName("code") val code: Int,
+    @SerializedName("Success") val isSuccess: Boolean,
+    @SerializedName("code") val code: String,
     @SerializedName("message") val message: String,
-    @SerializedName("result") val result: LoginResult?
+    @SerializedName("data") val result: LoginResult?
 )
 
 data class LoginResult(
     @SerializedName("memberId") val memberId: Int,
-    @SerializedName("accessToken") val accessToken: String
+    @SerializedName("jwt_token") val accessToken: String
 )
