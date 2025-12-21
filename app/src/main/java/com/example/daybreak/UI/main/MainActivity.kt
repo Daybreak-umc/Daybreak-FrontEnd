@@ -6,16 +6,17 @@ import android.view.View
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.daybreak.GoalFlowActivity
+import com.example.daybreak.GoalThisWeekFragment
 import com.example.daybreak.R
+import com.example.daybreak.ToastDialogFragment
 import com.example.daybreak.UI.adapter.MainVPAdapter
-import com.example.daybreak.UI.dialog.ToastDialogFragment
 import com.example.daybreak.UI.fragment.SettingFragment
 import com.example.daybreak.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    var isGenerated = true // 목표 생성 여부 플래그
+    var isGenerated = false // 목표 생성 여부 플래그
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -175,5 +176,9 @@ class MainActivity : AppCompatActivity() {
      */
     fun moveToStep1() {
         startActivity(Intent(this, GoalFlowActivity::class.java))
+    }
+
+    fun moveToGoalThisWeek() {
+        openFragment(GoalThisWeekFragment(), "이번 주 행동 목표")
     }
 }

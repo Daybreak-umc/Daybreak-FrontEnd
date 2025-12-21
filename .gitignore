@@ -1,4 +1,16 @@
+.gradle/
+<<<<<<< HEAD
+.gradle/
+=======
+build/
+local.properties
+.DS_Store
+
+# IntelliJ / Android Studio
+.idea/*
+!.idea/codeStyles/
+!.idea/codeStyles/**
+>>>>>>> origin/dev
+.gradle/
 .idea/
 local.properties
-.gradle/
-.gradle/

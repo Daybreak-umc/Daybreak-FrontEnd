@@ -1,4 +1,6 @@
-package com.example.daybreak // 패키지명 확인
+package com.example.daybreak.Data
+
+import com.example.daybreak.R
 
 sealed class GoalDetailItem {
     object Header : GoalDetailItem()
