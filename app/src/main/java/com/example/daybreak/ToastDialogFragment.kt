@@ -44,7 +44,7 @@ class ToastDialogFragment(private val message: String, private val iconResId: In
             setGravity(Gravity.TOP)
             //위 마진 조절
             val params = attributes
-            params.y = 100
+            params.y = 40
             params.windowAnimations = android.R.style.Animation_Toast
             attributes = params
         }
@@ -52,5 +52,16 @@ class ToastDialogFragment(private val message: String, private val iconResId: In
         Handler(Looper.getMainLooper()).postDelayed({
             if(isAdded) dismiss()
         }, 3000)
+    }
+    override fun onResume() {
+        super.onResume()
+        dialog?.window?.let { window ->
+            val params = window.attributes
+            // 화면 너비의 90%로 설정
+            params.width = (resources.displayMetrics.widthPixels * 0.9).toInt()
+            // 높이는 내용물에 맞게 자동 조절
+            params.height = android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+            window.attributes = params
+        }
     }
 }
