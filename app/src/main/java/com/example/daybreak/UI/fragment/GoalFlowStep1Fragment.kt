@@ -12,6 +12,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.daybreak.GoalCategoryAdapter
+import com.example.daybreak.GoalFlowActivity
+import com.example.daybreak.R
 import com.example.daybreak.databinding.FragmentGoalFlowStep1Binding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 

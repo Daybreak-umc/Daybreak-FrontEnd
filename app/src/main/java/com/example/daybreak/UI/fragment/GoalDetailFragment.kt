@@ -7,16 +7,12 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.view.Window
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.daybreak.adapter.GoalDetailAdapter
-import com.example.daybreak.GoalDetailItem
-import com.example.daybreak.PeriodType
-import com.example.daybreak.R
+import com.example.daybreak.UI.adapter.GoalDetailAdapter
 
 class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
 

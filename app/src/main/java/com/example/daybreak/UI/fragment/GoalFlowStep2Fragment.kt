@@ -1,4 +1,6 @@
 package com.example.daybreak.UI.fragment
 
-class GoalFlowStep2Fragment {
+import androidx.fragment.app.Fragment
+
+class GoalFlowStep2Fragment : Fragment() {
 }

@@ -1,10 +1,15 @@
-package com.example.daybreak
+package com.example.daybreak.UI.main
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
+import com.example.daybreak.GoalFlowActivity
+import com.example.daybreak.R
+import com.example.daybreak.UI.adapter.MainVPAdapter
+import com.example.daybreak.UI.dialog.ToastDialogFragment
+import com.example.daybreak.UI.fragment.SettingFragment
 import com.example.daybreak.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
