@@ -9,7 +9,6 @@ data class WeeklyGoalData(
 )
 
 data class CheckItem(
-    val id : Long,
     val text: String,
     var isChecked: Boolean = false
 )

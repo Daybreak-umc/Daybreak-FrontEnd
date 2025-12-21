@@ -24,6 +24,8 @@ class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
     private lateinit var adapter: GoalDetailAdapter
 
     // ✅ 모드 구분 변수 (기본값은 삭제 모드)
+    // "VIEW": 삭제 가능 (메인에서 들어옴)
+    // "CREATE": 다음 단계 진행 (목표 생성 중 들어옴)
     private var viewMode: String = "VIEW"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,6 +56,9 @@ class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
         recyclerView.adapter = adapter
     }
 
+    /**
+     * 화면에 보여줄 데이터 리스트 생성 (모드에 따라 마지막 버튼 변경)
+     */
     private fun createItems(): List<GoalDetailItem> {
         val list = mutableListOf<GoalDetailItem>()
 
@@ -75,13 +80,17 @@ class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
         return list
     }
 
-    // [최초 생성 모드] 다음 단계 진행
+    // ------------------------------------------------------------------
+    // [최초 생성 모드] 다음 단계 진행 로직 (버튼 클릭 시 실행됨)
+    // ------------------------------------------------------------------
     private fun handleNextClick() {
         (activity as? MainActivity)?.openFragment(GoalThisWeekFragment(), "목표 완료")
     }
 
 
-    // [메인에서 삭제 모드] 삭제 다이얼로그
+    // ------------------------------------------------------------------
+    // [메인에서 삭제 모드] 삭제 다이얼로그 (기존 코드 유지)
+    // ------------------------------------------------------------------
     private fun showDeleteConfirmationDialog() {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.fragment_goal_delete_pop_up_dialog)
@@ -105,28 +114,17 @@ class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
         dialog.show()
     }
 
-    // ✅ [수정] 삭제 동작 수행 함수
     private fun performDeleteGoal() {
-        // 나중에 여기서 API 호출 (DELETE /goals/{goalId})
-
         val isSuccess = true
-
         if (isSuccess) {
-            // 1. 성공 토스트 띄우기
             showCustomToast(true, "목표가 삭제되었어요")
-
-            // 2. [핵심] 화면 뒤로가기 (MainActivity 리스너가 감지해서 UI 복구함)
-            // parentFragmentManager.popBackStack() 은 뷰페이저 내부가 아니라
-            // MainActivity의 FragmentManager에서 빼야 하므로 activity?.supportFragmentManager를 사용 권장
-
-            activity?.supportFragmentManager?.popBackStack()
-
+            parentFragmentManager.popBackStack()
         } else {
             showCustomToast(false, "목표 삭제 중 오류가 발생했어요")
         }
     }
 
-    // 커스텀 토스트
+    // 커스텀 토스트 (기존 코드 유지)
     private fun showCustomToast(isSuccess: Boolean, message: String) {
         val inflater = LayoutInflater.from(requireContext())
         val layoutId = R.layout.fragment_toast_dialog
@@ -156,6 +154,7 @@ class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
         toast.show()
     }
 
+    // ✅ [편의 기능] 인스턴스 생성 헬퍼 함수
     companion object {
         fun newInstance(mode: String): GoalDetailFragment {
             val fragment = GoalDetailFragment()
