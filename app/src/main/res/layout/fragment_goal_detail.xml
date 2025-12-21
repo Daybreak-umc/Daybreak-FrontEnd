@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/colorblack">
 
     <androidx.constraintlayout.widget.Guideline
@@ -20,113 +20,25 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.92" />
 
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="97dp" />
-
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/login_tv_ll"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintStart_toStartOf="@id/guideline_start"-->
-<!--        app:layout_constraintTop_toTopOf="@id/guideline_horizontal"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/guideline_end">-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal">-->
-<!--            <TextView-->
-<!--                style="@style/wantedSans_regular_18sp_gray_title"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="앞으로의 " />-->
-<!--            <TextView-->
-<!--                style="@style/wantedSans_semibold_18sp_yellow_title"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="하루들" />-->
-<!--            <TextView-->
-<!--                style="@style/wantedSans_regular_18sp_gray_title"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="이 모여" />-->
-<!--        </LinearLayout>-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal">-->
-<!--            <TextView-->
-<!--                style="@style/wantedSans_regular_18sp_gray_title"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="나의 " />-->
-<!--            <TextView-->
-<!--                style="@style/wantedSans_semibold_18sp_yellow_title"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="2026년" />-->
-<!--            <TextView-->
-<!--                style="@style/wantedSans_regular_18sp_gray_title"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="을 만들어요" />-->
-<!--        </LinearLayout>-->
-<!--        <View-->
-<!--            android:id="@+id/goal_period_box1"-->
-<!--            android:layout_marginTop="24dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="115dp"-->
-<!--            android:background="@drawable/bg_rounded_8dp"/>-->
-
-
-
-<!--        <View-->
-<!--            android:id="@+id/goal_period_box2"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="115dp"-->
-<!--            android:background="@drawable/bg_rounded_8dp"/>-->
-
-<!--        <View-->
-<!--            android:id="@+id/goal_period_box3"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_width="320dp"-->
-<!--            android:layout_height="115dp"-->
-<!--            android:background="@drawable/bg_rounded_8dp"/>-->
-
-<!--        <View-->
-<!--            android:id="@+id/goal_period_bo2"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_width="320dp"-->
-<!--            android:layout_height="115dp"-->
-<!--            android:background="@drawable/bg_rounded_8dp"/>-->
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            style="@style/wantedSans_semibold_12sp_toggle"-->
-<!--            android:text="목표 삭제하기"-->
-<!--            />-->
-<!--    </LinearLayout>-->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/goal_detail_Rv"
+    <!-- 👇 1. 스크롤을 담당할 NestedScrollView를 만듭니다. -->
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:clipToPadding="false"
-        android:paddingTop="16dp"
-        android:paddingBottom="24dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/goal_detail_Rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:clipToPadding="false"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp" />
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
