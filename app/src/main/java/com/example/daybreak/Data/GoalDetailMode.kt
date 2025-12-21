@@ -1,4 +1,4 @@
-import com.example.daybreak.PeriodType
+import com.example.daybreak.Data.PeriodType
 
 // GoalDetailItem.kt (예상 코드)
 sealed class GoalDetailItem {

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.daybreak.Api.AuthViewModel
 import com.example.daybreak.R
-import com.example.daybreak.UI.dialog.ToastDialogFragment
+import com.example.daybreak.ToastDialogFragment
 import com.example.daybreak.UI.main.MainActivity
 import com.example.daybreak.databinding.ActivityLoginBinding
 
