@@ -1,5 +1,6 @@
 package com.example.daybreak
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.Spannable
@@ -108,10 +109,11 @@ class GoalFlowStep2Fragment : Fragment() {
         val futureMeText = binding.etFutureMe.text.toString()
 
         // TODO: ViewModel or Activity로 데이터 전달
-        // TODO: 서버 요청 or 다음 화면 이동
+        // 예: (activity as GoalFlowActivity).setFutureMe(futureMeText)
 
-        // 임시: 플로우 종료
-        requireActivity().finish()
+        // 로딩 화면으로 이동
+        val intent = Intent(requireContext(), GoalFlowLoadingActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onDestroyView() {
