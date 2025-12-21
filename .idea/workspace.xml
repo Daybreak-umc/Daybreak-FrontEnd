@@ -225,8 +225,8 @@
   <component name="ChangeListManager">
     <list default="true" id="00962ff1-92dd-46d9-9e53-1ad01a7bad57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/daybreak/WeeklyGoalData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/daybreak/WeeklyGoalData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/daybreak/WeeklyGoalsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/daybreak/WeeklyGoalsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,7 +310,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "feat/#64/color__add",
+    "git-widget-placeholder": "feat/#54/checkbox__implementation",
     "last_opened_file_path": "C:/Daybreak-FrontEnd/Daybreak-FrontEnd/app/src/main/res/layout",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }

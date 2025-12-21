@@ -30,12 +30,17 @@ class WeeklyGoalsFragment : Fragment() {
             //임시 코드(추후 수정 예정)
 
             val dummyData = arrayListOf(
-                WeeklyGoalData("ㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㄹ",false),
-                WeeklyGoalData("ㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㄹ",false),
-                WeeklyGoalData("ㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㄹ",false)
+                WeeklyGoalData("ㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㄹ",false, 1),
+                WeeklyGoalData("ㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㄹ",false, 1),
+                WeeklyGoalData("ㅇㅇㄹㄴㅇㄹㄴㅇㄹㄴㄹ",false,1)
             )
 
             // 여기서 체크박스 리스트 제어
+
+            val categoryId =1
+            val color = CategoryMapper.getColor(requireContext(), categoryId)
+
+            binding.layoutWeeklygoalsPost.someTextView.setTextColor(color)
 
 
 
