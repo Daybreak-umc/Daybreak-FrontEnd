@@ -1,10 +1,11 @@
-package com.example.daybreak
+package com.example.daybreak.Api
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.daybreak.Data.Login
+import com.example.daybreak.Data.LoginResponse
 import kotlinx.coroutines.launch
 
 class AuthViewModel : ViewModel() {

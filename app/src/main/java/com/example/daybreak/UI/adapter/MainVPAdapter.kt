@@ -1,8 +1,10 @@
-package com.example.daybreak
+package com.example.daybreak.UI.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.daybreak.UI.fragment.FuturemeFragment
+import com.example.daybreak.UI.fragment.WeeklyGoalsFragment
 
 class MainVPAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 

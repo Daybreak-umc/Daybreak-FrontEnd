@@ -1,12 +1,14 @@
-package com.example.daybreak
+package com.example.daybreak.UI.`object`
 
 import android.content.Context
 import androidx.core.content.ContextCompat
+import com.example.daybreak.R
 
 object CategoryMapper {
     // 카테고리 ID 값에 따른 색상 리소스 ID 반환
     fun getColorResId(categoryId:Int):Int {
        return when(categoryId){
+
            1->R.color.colorHealth
            2 -> R.color.colorMind
            3->R.color.colorStudy

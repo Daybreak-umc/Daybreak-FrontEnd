@@ -1,10 +1,13 @@
-package com.example.daybreak
+package com.example.daybreak.UI.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.daybreak.UI.dialog.PopUpDialogFragment
+import com.example.daybreak.UI.login.LoginActivity
 import com.example.daybreak.databinding.FragmentSettingBinding
 
 class SettingFragment : Fragment() {
@@ -28,9 +31,9 @@ class SettingFragment : Fragment() {
             dialog.setCallback(object : PopUpDialogFragment.MyDialogCallback{
                 override fun onConfirm(){
                     //로그인 화면으로 이동
-                    val intent = android.content.Intent(requireContext(), LoginActivity::class.java)
+                    val intent = Intent(requireContext(), LoginActivity::class.java)
                     intent.putExtra("showLogoutToast", true)
-                    intent.flags = android.content.Intent.FLAG_ACTIVITY_NEW_TASK or android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                 }
             })

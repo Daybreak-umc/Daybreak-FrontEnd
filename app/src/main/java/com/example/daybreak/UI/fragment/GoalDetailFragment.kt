@@ -191,6 +191,6 @@ class GoalDetailFragment : Fragment(R.layout.fragment_goal_detail) {
             rootLayout.layoutParams.width = width
         }
         toast.show()
-        
+
     }
 }

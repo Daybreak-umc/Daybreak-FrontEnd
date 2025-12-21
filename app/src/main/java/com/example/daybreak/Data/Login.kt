@@ -1,4 +1,4 @@
-package com.example.daybreak
+package com.example.daybreak.Data
 
 import com.google.gson.annotations.SerializedName
 

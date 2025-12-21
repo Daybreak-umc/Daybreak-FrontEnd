@@ -1,9 +1,11 @@
-package com.example.daybreak
+package com.example.daybreak.UI.adapter
 
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.daybreak.UI.`object`.CategoryMapper
+import com.example.daybreak.Data.WeeklyGoalData
 import com.example.daybreak.databinding.ItemWeeklygoalsBinding
 
 class WeeklyGoalRVAdapter(private val items: List<WeeklyGoalData>) :

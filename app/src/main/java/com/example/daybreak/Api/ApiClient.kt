@@ -1,4 +1,4 @@
-package com.example.daybreak
+package com.example.daybreak.Api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

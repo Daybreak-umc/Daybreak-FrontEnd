@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context="com.example.daybreak.GoalFlowStep1Fragment">
+    tools:context="com.example.daybreak.UI.fragment.GoalFlowStep1Fragment">
 
     <!-- 화면 제목 -->
     <TextView

@@ -1,5 +1,6 @@
-package com.example.daybreak
+package com.example.daybreak.UI.dialog
 
+import android.R
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -45,7 +46,7 @@ class ToastDialogFragment(private val message: String, private val iconResId: In
             //위 마진 조절
             val params = attributes
             params.y = 100
-            params.windowAnimations = android.R.style.Animation_Toast
+            params.windowAnimations = R.style.Animation_Toast
             attributes = params
         }
 

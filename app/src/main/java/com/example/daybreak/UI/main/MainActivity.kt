@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    
+
     // [기능 함수 모음]
 
 

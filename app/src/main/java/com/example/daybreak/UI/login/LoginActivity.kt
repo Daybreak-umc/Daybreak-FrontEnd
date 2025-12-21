@@ -1,4 +1,4 @@
-package com.example.daybreak
+package com.example.daybreak.UI.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,12 @@ import android.text.Editable
 import android.text.InputType
 import android.text.TextWatcher
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.example.daybreak.Api.AuthViewModel
+import com.example.daybreak.R
+import com.example.daybreak.UI.dialog.ToastDialogFragment
+import com.example.daybreak.UI.main.MainActivity
 import com.example.daybreak.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -19,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = androidx.lifecycle.ViewModelProvider(this).get(AuthViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
 
         val showToast = intent.getBooleanExtra("showLogoutToast", false)
         if (showToast) {
