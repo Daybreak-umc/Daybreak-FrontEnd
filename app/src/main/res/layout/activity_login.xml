@@ -74,7 +74,8 @@
         app:layout_constraintTop_toBottomOf="@id/login_tv_ll"
         android:layout_marginTop="20dp"
         android:addStatesFromChildren="true"
-        android:background="@drawable/edittext_focus_background">
+        android:background="@drawable/edittext_focus_background"
+        android:descendantFocusability="afterDescendants">
 
         <EditText
             android:id="@+id/login_id_et"
@@ -84,7 +85,9 @@
             android:hint="아이디를 입력해주세요"
             android:textColorHint="@color/Gray_300"
             android:inputType="text"
-            android:background="@null"/>
+            android:background="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <ImageView
             android:id="@+id/login_id_iv"
@@ -105,7 +108,8 @@
         app:layout_constraintTop_toBottomOf="@id/login_id_ll"
         android:layout_marginTop="16dp"
         android:addStatesFromChildren="true"
-        android:background="@drawable/edittext_focus_background">
+        android:background="@drawable/edittext_focus_background"
+        android:descendantFocusability="afterDescendants">
 
         <EditText
             android:id="@+id/login_pwd_et"
@@ -115,7 +119,9 @@
             android:hint="비밀번호를 입력해주세요"
             android:inputType="textPassword"
             android:textColorHint="@color/Gray_300"
-            android:background="@null"/>
+            android:background="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
         
         <ImageView
             android:id="@+id/login_pwd_close_eye_iv"
